@@ -2,12 +2,12 @@ import React from "react";
 
 import AppLayout from "../components/AppLayout.js";
 
-const Main = () => {
+const Mokoko = () => {
   return (
     <AppLayout>
-      <div>메인 페이지</div>
+      <div>내실 페이지</div>
     </AppLayout>
   );
 };
 
-export default Main;
+export default Mokoko;

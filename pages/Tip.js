@@ -1,13 +1,12 @@
 import React from "react";
-
 import AppLayout from "../components/AppLayout.js";
 
-const Main = () => {
+const Tip = () => {
   return (
     <AppLayout>
-      <div>메인 페이지</div>
+      <div>팁 모음 페이지</div>
     </AppLayout>
   );
 };
 
-export default Main;
+export default Tip;

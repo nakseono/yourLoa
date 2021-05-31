@@ -1,13 +1,12 @@
 import React from "react";
-
 import AppLayout from "../components/AppLayout.js";
 
-const Main = () => {
+const Barrack = () => {
   return (
     <AppLayout>
-      <div>메인 페이지</div>
+      <div>배럭 페이지</div>
     </AppLayout>
   );
 };
 
-export default Main;
+export default Barrack;
