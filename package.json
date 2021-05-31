@@ -1,0 +1,26 @@
+{
+  "name": "yourark",
+  "version": "1.0.0",
+  "description": "로스트아크를 플레이함에 있어 도움이 될 수 있는 정보들을 모아놓는 사이트.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakseono/yourArk.git"
+  },
+  "author": "nakseono",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nakseono/yourArk/issues"
+  },
+  "homepage": "https://github.com/nakseono/yourArk#readme",
+  "dependencies": {
+    "antd": "^4.16.1",
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  }
+}
