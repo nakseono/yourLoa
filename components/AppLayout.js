@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Collapse, Row } from "antd";
+import { Col, Row } from "antd";
 import Link from "next/link";
 import "antd/dist/antd.css";
 import styled from "styled-components";
@@ -10,12 +10,15 @@ import TodoListCut from "./TodoListCut";
 
 const MainCol = styled(Col)`
   width: 950px;
-  padding: 0px 5px;
+  padding: 0px 20px;
 `;
 
 const SubCol = styled(Col)`
   width: 340px;
-  background-color: gray;
+`;
+
+const TodoWrapper = styled(Col)`
+  height: 230px;
 `;
 
 const AppLayout = ({ children }) => {
@@ -27,7 +30,9 @@ const AppLayout = ({ children }) => {
       </MainCol>
       <SubCol>
         <UserProfile />
-        <TodoListCut />
+        <TodoWrapper>
+          <TodoListCut />
+        </TodoWrapper>
       </SubCol>
     </Row>
   );
