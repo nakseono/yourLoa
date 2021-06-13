@@ -4,8 +4,6 @@
 
 ## Todo List
 
-### Minimun
-
 - [x] 간단한 UI 직접 만들고, 각 컴포넌트는 antd에서.
 - [ ] CRUD 구현
 - [ ] bynn.ark 처럼 본캐와 배럭들의 할 일을 정리하여 볼 수 있도록  
