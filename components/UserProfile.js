@@ -18,6 +18,7 @@ const ButtonStyle = styled(Button)`
   padding: 0;
   padding-left: 4px;
   border-radius: 14px;
+  border: solid 0.3px;
 `;
 
 const profileDefine = ({ server, mainChar, mainCharLv }) => {
@@ -28,18 +29,14 @@ const UserProfile = () => {
   return (
     <Card
       style={{ marginBottom: "10px" }}
-      actions={[
-        <SettingOutlined key="setting" />,
-        <EditOutlined key="edit" />,
-        // <EllipsisOutlined key="ellipsis" />,
-      ]}
+      actions={[<SettingOutlined key="setting" />, <EditOutlined key="edit" />]}
     >
-      <ButtonStyle>로그아웃</ButtonStyle>
       <Card.Meta
         avatar={<Avatar>프사</Avatar>}
         title="유저 닉네임 님"
         description={profileDefine("test", "test", "test")}
       />
+      <ButtonStyle>로그아웃</ButtonStyle>
     </Card>
   );
 };

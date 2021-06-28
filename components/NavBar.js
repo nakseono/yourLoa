@@ -11,8 +11,14 @@ const MenuItemWrapper = styled(Menu.Item)`
 
 const NavBar = () => {
   return (
-    <div style={{}}>
-      <Menu mode="horizontal" style={{ textAlign: "center", margin: "auto" }}>
+    <div style={{ borderBottom: "solid 0.5px" }}>
+      <Menu
+        mode="horizontal"
+        style={{
+          textAlign: "center",
+          margin: "auto",
+        }}
+      >
         <MenuItemWrapper>
           <Link href="/">
             <a>메인 페이지</a>

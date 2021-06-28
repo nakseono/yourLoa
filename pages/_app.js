@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import "./App.css";
+
 const ComponentWrapper = styled.div`
   width: 1400px;
   padding: 20px 30px;
