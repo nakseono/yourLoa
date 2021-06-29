@@ -9,3 +9,19 @@
 .ant-card-actions > li:not(:last-child) {
   border-right: 0.5px solid !important;
 }
+
+.ant-divider-horizontal.ant-divider-with-text {
+  border-top-color: rgba(0, 0, 0) !important;
+}
+
+.ant-list-bordered {
+  border: solid 0.5px !important;
+}
+
+.ant-list-split .ant-list-header {
+  border-bottom: solid 0.5px !important;
+}
+
+.ant-list-split .ant-list-item {
+  border-bottom: solid 0.5px !important;
+}
