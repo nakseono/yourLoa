@@ -4,21 +4,24 @@ import Link from "next/link";
 import "antd/dist/antd.css";
 import styled from "styled-components";
 
-const MenuItemWrapper = styled(Menu.Item)`
-  margin-left: 35px;
-  margin-right: 35px;
+const MenuWrapper = styled(Menu)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
+const MenuItemWrapper = styled(Menu.Item)`
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+`;
+
+/* pointer-events: none; */
+/* cursor: default; */
 
 const NavBar = () => {
   return (
     <div style={{ borderBottom: "solid 0.5px" }}>
-      <Menu
-        mode="horizontal"
-        style={{
-          textAlign: "center",
-          margin: "auto",
-        }}
-      >
+      <MenuWrapper mode="horizontal">
         <MenuItemWrapper>
           <Link href="/">
             <a>메인 페이지</a>
@@ -44,7 +47,7 @@ const NavBar = () => {
             <a>꿀팁 | 공략</a>
           </Link>
         </MenuItemWrapper>
-      </Menu>
+      </MenuWrapper>
     </div>
   );
 };
