@@ -8,6 +8,14 @@ import NavBar from "./NavBar";
 import UserProfile from "./UserProfile";
 import TodoListCut from "./TodoListCut";
 
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+`;
+
 const MainCol = styled(Col)`
   width: 950px;
   padding: 0px 20px;
@@ -23,18 +31,21 @@ const TodoWrapper = styled(Col)`
 
 const AppLayout = ({ children }) => {
   return (
-    <Row>
-      <MainCol>
-        <NavBar />
-        <div>{children}</div>
-      </MainCol>
-      <SubCol>
-        <UserProfile />
-        <TodoWrapper>
-          <TodoListCut />
-        </TodoWrapper>
-      </SubCol>
-    </Row>
+    <>
+      <Title>yourLoa</Title>
+      <Row>
+        <MainCol>
+          <NavBar />
+          <div>{children}</div>
+        </MainCol>
+        <SubCol>
+          <UserProfile />
+          <TodoWrapper>
+            <TodoListCut />
+          </TodoWrapper>
+        </SubCol>
+      </Row>
+    </>
   );
 };
 
