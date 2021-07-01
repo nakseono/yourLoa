@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 import styled from "styled-components";
 
 import NavBar from "./NavBar";
+import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
 import TodoListCut from "./TodoListCut";
 
@@ -39,7 +40,8 @@ const AppLayout = ({ children }) => {
           <div>{children}</div>
         </MainCol>
         <SubCol>
-          <UserProfile />
+          <LoginForm />
+          {/* <UserProfile /> */}
           <TodoWrapper>
             <TodoListCut />
           </TodoWrapper>
