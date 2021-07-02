@@ -41,6 +41,7 @@ const LoginForm = () => {
               message: "아이디를 입력해주세요!",
             },
           ]}
+          style={{ marginBottom: "10px" }}
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
