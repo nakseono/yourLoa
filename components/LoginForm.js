@@ -1,7 +1,12 @@
 import React from "react";
 import { Card, Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import Link from "next/link";
 import styled from "styled-components";
+
+const CardAct = styled.a`
+  color: black !important;
+`;
 
 const LoginForm = () => {
   const onFinish = (values) => {
@@ -9,7 +14,17 @@ const LoginForm = () => {
   };
 
   return (
-    <Card actions={["비밀번호 찾기", "회원가입"]} className="LoginFormCard">
+    <Card
+      actions={[
+        <Link href="/FindPassword">
+          <CardAct>비밀번호 찾기</CardAct>
+        </Link>,
+        <Link href="/SignUp">
+          <CardAct>회원가입</CardAct>
+        </Link>,
+      ]}
+      className="LoginFormCard"
+    >
       <Form
         name="normal_login"
         className="login-form"
