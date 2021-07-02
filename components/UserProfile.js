@@ -29,7 +29,10 @@ const UserProfile = () => {
   return (
     <Card
       style={{ marginBottom: "10px" }}
-      actions={[<SettingOutlined key="setting" />, <EditOutlined key="edit" />]}
+      actions={[
+        <SettingOutlined key="setting" className="CardIcon" />,
+        <EditOutlined key="edit" className="CardIcon" />,
+      ]}
     >
       <Card.Meta
         avatar={<Avatar>프사</Avatar>}
