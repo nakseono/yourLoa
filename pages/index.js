@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Divider } from "antd";
 
 import AppLayout from "../components/AppLayout.js";
 
@@ -18,11 +19,17 @@ const InLayoutContent = styled.div`
   padding: 1em;
 `;
 
+const DividerWrapper = styled(Divider)`
+  margin-top: 2em !important;
+`;
+
 const Main = () => {
   return (
     <AppLayout>
       <InLayoutContent>
+        <Divider>이벤트 알림</Divider>
         <BannerWrapper>놓치지 말아야 할 이벤트 배너</BannerWrapper>
+        <DividerWrapper>꿀팁 추천!</DividerWrapper>
         <BannerWrapper>꿀팁 배너</BannerWrapper>
       </InLayoutContent>
     </AppLayout>
