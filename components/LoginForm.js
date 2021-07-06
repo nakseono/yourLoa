@@ -79,7 +79,7 @@ const LoginForm = () => {
             className="login-form-button"
             style={{ width: "100%" }}
           >
-            Log in
+            로그인
           </Button>
         </Form.Item>
       </Form>

@@ -29,7 +29,7 @@ const Main = () => {
       <InLayoutContent>
         <Divider>이벤트 알림</Divider>
         <BannerWrapper>놓치지 말아야 할 이벤트 배너</BannerWrapper>
-        <DividerWrapper>꿀팁 추천!</DividerWrapper>
+        <DividerWrapper>읽어보면 좋은 꿀팁</DividerWrapper>
         <BannerWrapper>꿀팁 배너</BannerWrapper>
       </InLayoutContent>
     </AppLayout>
