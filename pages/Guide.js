@@ -1,8 +1,6 @@
 import React from "react";
 import AppLayout from "../components/AppLayout.js";
 
-import Warlord from "./Guide/Warlord";
-
 const Guide = () => {
   return (
     <AppLayout>
