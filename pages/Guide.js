@@ -1,5 +1,6 @@
 import React from "react";
 import AppLayout from "../components/AppLayout.js";
+import AllPage from "./Guide/AllPage";
 
 const Guide = () => {
   return (
@@ -11,7 +12,7 @@ const Guide = () => {
         3. 각 클래스별로 하위 컴포넌트를 나눠야 하므로 맨 위의 표를 제외한
         아래에 컴포넌트 구분
       </div>
-      <Warlord /> //! 여기 컴포넌트 바뀔건 또 페이지를 만드는것이 좋을 듯..
+      <AllPage />
     </AppLayout>
   );
 };
