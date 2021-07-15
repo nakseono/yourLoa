@@ -25,7 +25,7 @@ const profileDefine = ({ server, mainChar, mainCharLv }) => {
   return `${server} | ${mainChar} - Lv.${mainCharLv}`;
 };
 
-const UserProfile = () => {
+const UserProfile = ({ loginFunc }) => {
   return (
     <Card
       style={{ marginBottom: "10px" }}
@@ -39,7 +39,7 @@ const UserProfile = () => {
         title="유저 닉네임 님"
         description={profileDefine("test", "test", "test")}
       />
-      <ButtonStyle>로그아웃</ButtonStyle>
+      <ButtonStyle onClick={loginFunc}>로그아웃</ButtonStyle>
     </Card>
   );
 };

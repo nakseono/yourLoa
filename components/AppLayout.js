@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Col, Row } from "antd";
 import Link from "next/link";
 import "antd/dist/antd.css";
@@ -31,6 +31,12 @@ const TodoWrapper = styled(Col)`
 `;
 
 const AppLayout = ({ children }) => {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const onChangeLogin = () => {
+    isLogin ? setIsLogin(false) : setIsLogin(true);
+  };
+
   return (
     <>
       <Title>yourLoa</Title>
@@ -40,8 +46,11 @@ const AppLayout = ({ children }) => {
           <div>{children}</div>
         </MainCol>
         <SubCol>
-          <LoginForm />
-          {/* <UserProfile /> */}
+          {isLogin ? (
+            <UserProfile loginFunc={onChangeLogin} />
+          ) : (
+            <LoginForm loginFunc={onChangeLogin} />
+          )}
           <TodoWrapper>
             <TodoListCut />
           </TodoWrapper>
