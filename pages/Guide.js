@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Card } from "antd";
+import styled from "styled-components";
 
 import AppLayout from "../components/AppLayout.js";
 
@@ -10,6 +11,9 @@ import FighterPage from "./Guide/GuidePages/Fighter/FighterPage";
 import AssasinPage from "./Guide/GuidePages/Assasin/AssasinPage";
 
 const Guide = () => {
+  //! <-- states -->
+  const [adviceMessage, setMessage] = useState(true);
+
   const [isWarrior, setWarriorPage] = useState(false);
   const [isMagician, setMagicianPage] = useState(false);
   const [isHunter, setHunterPage] = useState(false);
@@ -17,6 +21,7 @@ const Guide = () => {
   const [isAssasin, setAssasinPage] = useState(false);
 
   const clearState = useCallback(() => {
+    setMessage(false);
     setWarriorPage(false);
     setMagicianPage(false);
     setHunterPage(false);
@@ -45,64 +50,59 @@ const Guide = () => {
     setAssasinPage(true);
   };
 
+  //! <-- styled -->
+
+  const CardWrapper = styled(Card)`
+    border: 0.5px solid;
+    margin-top: 2rem;
+  `;
+
+  const CardCompoStyled = styled(Card.Grid)`
+    width: 20%;
+    border-right: solid 0.5px;
+    display: flex;
+    justify-content: center;
+  `;
+
   return (
     <AppLayout>
-      <Card
+      <CardWrapper
         title="전 클래스"
         headStyle={{ display: "flex", justifyContent: "center" }}
-        style={{ border: "0.5px solid", marginTop: "2rem" }}
+        size="small"
       >
-        <Card.Grid
-          style={{
-            width: "20%",
-            borderRight: "solid 0.5px",
-            justifyContent: "center",
-            display: "flex",
-          }}
-          onClick={clickWarrior}
-        >
+        <CardCompoStyled onClick={clickWarrior}>
           <div>전사</div>
-        </Card.Grid>
-        <Card.Grid
-          style={{
-            width: "20%",
-            borderRight: "solid 0.5px",
-            justifyContent: "center",
-            display: "flex",
-          }}
-          onClick={clickMagician}
-        >
+        </CardCompoStyled>
+        <CardCompoStyled onClick={clickMagician}>
           <div>마법사</div>
-        </Card.Grid>
-        <Card.Grid
-          style={{
-            width: "20%",
-            borderRight: "solid 0.5px",
-            justifyContent: "center",
-            display: "flex",
-          }}
-          onClick={clickHunter}
-        >
+        </CardCompoStyled>
+        <CardCompoStyled onClick={clickHunter}>
           <div>헌터</div>
-        </Card.Grid>
-        <Card.Grid
-          style={{
-            width: "20%",
-            borderRight: "solid 0.5px",
-            justifyContent: "center",
-            display: "flex",
-          }}
-          onClick={clickFighter}
-        >
+        </CardCompoStyled>
+        <CardCompoStyled onClick={clickFighter}>
           <div>무도가</div>
-        </Card.Grid>
+        </CardCompoStyled>
         <Card.Grid
           style={{ width: "20%", justifyContent: "center", display: "flex" }}
           onClick={clickAssasin}
         >
           <div>암살자</div>
         </Card.Grid>
-      </Card>
+      </CardWrapper>
+      {adviceMessage ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "1rem",
+          }}
+        >
+          ↑↑↑ 위 박스에서 각 클래스명을 클릭하면 세부 클래스가 보입니다! ↑↑↑
+        </div>
+      ) : (
+        <></>
+      )}
       {isWarrior ? <WarriorPage /> : <></>}
       {isMagician ? <MagicianPage /> : <></>}
       {isHunter ? <HunterPage /> : <></>}
