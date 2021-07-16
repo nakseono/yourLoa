@@ -1,10 +1,17 @@
 import React, { useCallback, useState } from "react";
-import { Card } from "antd";
+import { Card, Menu } from "antd";
 
 import Berserker from "./Berserker";
 import Destroyer from "./Destroyer";
 import Holyknight from "./Holyknight";
 import Warlord from "./Warlord";
+
+const initialState = {
+  isBerserker: false,
+  isDestroyer: false,
+  isHolyknight: false,
+  isWarlord: false,
+};
 
 const WarriorPage = () => {
   const [isBerserker, setBerserkerState] = useState(false);
@@ -12,18 +19,29 @@ const WarriorPage = () => {
   const [isHolyknight, setHolyknightState] = useState(false);
   const [isWarlord, setWarlordState] = useState(false);
 
-  const clickBerserker = useCallback(() => {
+  const clearState = useCallback(() => {
+    setBerserkerState(false);
+    setDestroyerState(false);
+    setHolyknightState(false);
+    setWarlordState(false);
+  }, []);
+
+  const clickBerserker = () => {
+    clearState();
     setBerserkerState(true);
-  }, []);
-  const clickDestroyer = useCallback(() => {
+  };
+  const clickDestroyer = () => {
+    clearState();
     setDestroyerState(true);
-  }, []);
-  const clickHolyknight = useCallback(() => {
+  };
+  const clickHolyknight = () => {
+    clearState();
     setHolyknightState(true);
-  }, []);
-  const clickWarlord = useCallback(() => {
+  };
+  const clickWarlord = () => {
+    clearState();
     setWarlordState(true);
-  }, []);
+  };
 
   return (
     <>
