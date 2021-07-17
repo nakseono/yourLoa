@@ -54,7 +54,7 @@ const Guide = () => {
 
   const CardWrapper = styled(Card)`
     border: 0.5px solid;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   `;
 
   const CardCompoStyled = styled(Card.Grid)`

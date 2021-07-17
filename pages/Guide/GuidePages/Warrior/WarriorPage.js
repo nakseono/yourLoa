@@ -1,17 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Card, Menu } from "antd";
+import styled from "styled-components";
 
 import Berserker from "./Berserker";
 import Destroyer from "./Destroyer";
 import Holyknight from "./Holyknight";
 import Warlord from "./Warlord";
-
-const initialState = {
-  isBerserker: false,
-  isDestroyer: false,
-  isHolyknight: false,
-  isWarlord: false,
-};
 
 const WarriorPage = () => {
   const [isBerserker, setBerserkerState] = useState(false);
@@ -43,12 +37,17 @@ const WarriorPage = () => {
     setWarlordState(true);
   };
 
+  const CardWrapper = styled(Card)`
+    border: 0.5px solid;
+    margin-top: 1rem;
+  `;
+
   return (
     <>
-      <Card
+      <CardWrapper
         title="전사"
         headStyle={{ display: "flex", justifyContent: "center" }}
-        style={{ border: "0.5px solid", marginTop: "2rem" }}
+        size="small"
       >
         <Card.Grid
           style={{
@@ -89,7 +88,7 @@ const WarriorPage = () => {
         >
           <div>워로드</div>
         </Card.Grid>
-      </Card>
+      </CardWrapper>
       {isBerserker ? <Berserker /> : <></>}
       {isDestroyer ? <Destroyer /> : <></>}
       {isHolyknight ? <Holyknight /> : <></>}
