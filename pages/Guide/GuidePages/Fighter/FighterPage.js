@@ -9,39 +9,39 @@ import SoulMaster from "./SoulMaster";
 import Striker from "./Striker";
 
 const FighterPage = () => {
-  const [isBattleMaster, setBattleMaster] = useState(false);
-  const [isInfighter, setInfighter] = useState(false);
-  const [isLanceMaster, setLanceMaster] = useState(false);
-  const [isSoulMaster, setSoulMaster] = useState(false);
-  const [isStriker, setStriker] = useState(false);
+  const [isBattleMaster, setBattleMasterPage] = useState(false);
+  const [isInfighter, setInfighterPage] = useState(false);
+  const [isLanceMaster, setLanceMasterPage] = useState(false);
+  const [isSoulMaster, setSoulMasterPage] = useState(false);
+  const [isStriker, setStrikerPage] = useState(false);
 
   const clearState = useCallback(() => {
-    setBattleMaster(false);
-    setInfighter(false);
-    setLanceMaster(false);
-    setSoulMaster(false);
-    setStriker(false);
+    setBattleMasterPage(false);
+    setInfighterPage(false);
+    setLanceMasterPage(false);
+    setSoulMasterPage(false);
+    setStrikerPage(false);
   });
 
   const clickBattleMaster = () => {
     clearState();
-    setBattleMaster(true);
+    setBattleMasterPage(true);
   };
   const clickInfighter = () => {
     clearState();
-    setInfighter(true);
+    setInfighterPage(true);
   };
   const clickLanceMaster = () => {
     clearState();
-    setLanceMaster(true);
+    setLanceMasterPage(true);
   };
   const clickSoulMaster = () => {
     clearState();
-    setSoulMaster(true);
+    setSoulMasterPage(true);
   };
   const clickStriker = () => {
     clearState();
-    setStriker(true);
+    setStrikerPage(true);
   };
 
   const CardWrapper = styled(Card)`
