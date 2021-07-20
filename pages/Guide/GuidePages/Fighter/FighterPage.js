@@ -49,6 +49,10 @@ const FighterPage = () => {
     margin-top: 1rem;
   `;
 
+  const ClassWrapper = styled.div`
+    margin-top: 1rem;
+  `;
+
   return (
     <>
       <CardWrapper
@@ -107,11 +111,13 @@ const FighterPage = () => {
           <div>스트라이커</div>
         </Card.Grid>
       </CardWrapper>
-      {isBattleMaster ? <BattleMaster /> : <></>}
-      {isInfighter ? <Infighter /> : <></>}
-      {isLanceMaster ? <LanceMaster /> : <></>}
-      {isSoulMaster ? <SoulMaster /> : <></>}
-      {isStriker ? <Striker /> : <></>}
+      <ClassWrapper>
+        {isBattleMaster ? <BattleMaster /> : <></>}
+        {isInfighter ? <Infighter /> : <></>}
+        {isLanceMaster ? <LanceMaster /> : <></>}
+        {isSoulMaster ? <SoulMaster /> : <></>}
+        {isStriker ? <Striker /> : <></>}
+      </ClassWrapper>
     </>
   );
 };

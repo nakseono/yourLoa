@@ -42,6 +42,10 @@ const WarriorPage = () => {
     margin-top: 1rem;
   `;
 
+  const ClassWrapper = styled.div`
+    margin-top: 1rem;
+  `;
+
   return (
     <>
       <CardWrapper
@@ -89,10 +93,12 @@ const WarriorPage = () => {
           <div>워로드</div>
         </Card.Grid>
       </CardWrapper>
-      {isBerserker ? <Berserker /> : <></>}
-      {isDestroyer ? <Destroyer /> : <></>}
-      {isHolyknight ? <Holyknight /> : <></>}
-      {isWarlord ? <Warlord /> : <></>}
+      <ClassWrapper>
+        {isBerserker ? <Berserker /> : <></>}
+        {isDestroyer ? <Destroyer /> : <></>}
+        {isHolyknight ? <Holyknight /> : <></>}
+        {isWarlord ? <Warlord /> : <></>}
+      </ClassWrapper>
     </>
   );
 };

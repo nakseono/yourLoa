@@ -42,6 +42,10 @@ const MagicianPage = () => {
     margin-top: 1rem;
   `;
 
+  const ClassWrapper = styled.div`
+    margin-top: 1rem;
+  `;
+
   return (
     <>
       <CardWrapper
@@ -89,11 +93,12 @@ const MagicianPage = () => {
           <div>소서리스</div>
         </Card.Grid>
       </CardWrapper>
-
-      {isArcana ? <Arcana /> : <></>}
-      {isBard ? <Bard /> : <></>}
-      {isSummoner ? <Summoner /> : <></>}
-      {isSorceress ? <Sorceress /> : <></>}
+      <ClassWrapper>
+        {isArcana ? <Arcana /> : <></>}
+        {isBard ? <Bard /> : <></>}
+        {isSummoner ? <Summoner /> : <></>}
+        {isSorceress ? <Sorceress /> : <></>}
+      </ClassWrapper>
     </>
   );
 };

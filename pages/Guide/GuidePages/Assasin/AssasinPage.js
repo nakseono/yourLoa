@@ -35,6 +35,10 @@ const AssasinPage = () => {
     margin-top: 1rem;
   `;
 
+  const ClassWrapper = styled.div`
+    margin-top: 1rem;
+  `;
+
   return (
     <>
       <CardWrapper
@@ -75,9 +79,11 @@ const AssasinPage = () => {
           <div>리퍼</div>
         </Card.Grid>
       </CardWrapper>
-      {isBlade ? <Blade /> : <></>}
-      {isDemonic ? <Demonic /> : <></>}
-      {isReaper ? <Reaper /> : <></>}
+      <ClassWrapper>
+        {isBlade ? <Blade /> : <></>}
+        {isDemonic ? <Demonic /> : <></>}
+        {isReaper ? <Reaper /> : <></>}
+      </ClassWrapper>
     </>
   );
 };

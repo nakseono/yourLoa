@@ -49,6 +49,10 @@ const HunterPage = () => {
     margin-top: 1rem;
   `;
 
+  const ClassWrapper = styled.div`
+    margin-top: 1rem;
+  `;
+
   return (
     <>
       <CardWrapper
@@ -107,12 +111,13 @@ const HunterPage = () => {
           <div>건슬링어</div>
         </Card.Grid>
       </CardWrapper>
-
-      {isBlaster ? <Blaster /> : <></>}
-      {isDevilHunter ? <DevilHunter /> : <></>}
-      {isHawkEye ? <HawkEye /> : <></>}
-      {isScouter ? <Scouter /> : <></>}
-      {isGunslinger ? <Gunslinger /> : <></>}
+      <ClassWrapper>
+        {isBlaster ? <Blaster /> : <></>}
+        {isDevilHunter ? <DevilHunter /> : <></>}
+        {isHawkEye ? <HawkEye /> : <></>}
+        {isScouter ? <Scouter /> : <></>}
+        {isGunslinger ? <Gunslinger /> : <></>}
+      </ClassWrapper>
     </>
   );
 };
