@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Avatar, Button, Popover } from "antd";
+import { Card, Avatar, Button, Tooltip } from "antd";
 import {
   EditOutlined,
   EllipsisOutlined,
@@ -30,13 +30,13 @@ const UserProfile = ({ loginFunc }) => {
     <Card
       style={{ marginBottom: "10px" }}
       actions={[
-        <Popover content="yourLoa 페이지 설정" trigger="hover">
+        <Tooltip placement="top" title="yourLoa 페이지 설정" trigger="hover">
           <SettingOutlined key="setting" className="CardIcon" />
-        </Popover>,
+        </Tooltip>,
 
-        <Popover content="프로필 설정" trigger="hover">
+        <Tooltip placement="top" title="프로필 설정" trigger="hover">
           <EditOutlined key="edit" className="CardIcon" />
-        </Popover>,
+        </Tooltip>,
       ]}
     >
       <Card.Meta
