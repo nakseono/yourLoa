@@ -28,6 +28,7 @@ const Scouter = () => {
           진화의 유산
         </Descriptions.Item>
       </Descriptions>
+      <Divider style={{ backgroundColor: "black" }} />
       <Descriptions
         title="기술 스카우터"
         bordered
