@@ -18,30 +18,22 @@ const SettingPreset = ({ className, equip, mainChar, subChar, mark }) => {
 const Scouter = () => {
   return (
     <>
-      <Descriptions title="유산 스카우터" bordered>
-        <Descriptions.Item label="군단장 장비">6지배</Descriptions.Item>
-        <Descriptions.Item label="메인 특성">특화</Descriptions.Item>
-        <Descriptions.Item label="보조 특성">치명</Descriptions.Item>
-
-        <Descriptions.Item label="각인" span={3}>
-          원한 / 돌격대장 / 바리게이트 / 각성 or 기습의 대가 or 예리한 둔기 /
-          진화의 유산
-        </Descriptions.Item>
-      </Descriptions>
+      <SettingPreset
+        className="유산 스카우터"
+        equip="6지배"
+        mainChar="특화"
+        subChar="치명"
+        mark="원한 / 돌격대장 / 바리게이트 / 각성 or 기습의 대가 or 예리한 둔기 /
+      진화의 유산"
+      />
       <Divider style={{ backgroundColor: "black" }} />
-      <Descriptions
-        title="기술 스카우터"
-        bordered
-        style={{ marginTop: "1rem" }}
-      >
-        <Descriptions.Item label="군단장 장비">6지배</Descriptions.Item>
-        <Descriptions.Item label="메인 특성">특화</Descriptions.Item>
-        <Descriptions.Item label="보조 특성">치명</Descriptions.Item>
-
-        <Descriptions.Item label="각인" span={3}>
-          원한 / / / / 아르데타인의 기술
-        </Descriptions.Item>
-      </Descriptions>
+      <SettingPreset
+        className="기술 스카우터"
+        equip="?"
+        mainChar="?"
+        subChar="?"
+        mark="?"
+      />
     </>
   );
 };
