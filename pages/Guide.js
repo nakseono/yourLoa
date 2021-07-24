@@ -20,7 +20,11 @@ const SettingPreset = ({
   gem,
 }) => {
   return (
-    <Descriptions title={className} bordered>
+    <Descriptions
+      title={className}
+      bordered
+      labelStyle={{ backgroundColor: "white" }}
+    >
       <Descriptions.Item label="장비" span={1}>
         {equip}
       </Descriptions.Item>
@@ -33,12 +37,12 @@ const SettingPreset = ({
       <Descriptions.Item label="각인" span={3}>
         {mark}
       </Descriptions.Item>
-      <Descriptions.Itme label="스킬트리 | 룬" span={3}>
+      <Descriptions.Item label="스킬트리 | 룬" span={3}>
         {skill}
-      </Descriptions.Itme>
-      <Descriptions.Itme label="보석" span={3}>
+      </Descriptions.Item>
+      <Descriptions.Item label="보석" span={3}>
         {gem}
-      </Descriptions.Itme>
+      </Descriptions.Item>
     </Descriptions>
   );
 };
@@ -87,7 +91,7 @@ const Guide = () => {
 
   const CardWrapper = styled(Card)`
     border: 0.5px solid;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
   `;
 
   const CardCompoStyled = styled(Card.Grid)`
@@ -97,8 +101,15 @@ const Guide = () => {
     justify-content: center;
   `;
 
+  //! <-- return -->
+
   return (
     <AppLayout>
+      <div>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          LastUpdated. 21.07.24
+        </div>
+      </div>
       <CardWrapper
         title="전 클래스"
         headStyle={{ display: "flex", justifyContent: "center" }}
