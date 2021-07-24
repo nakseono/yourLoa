@@ -23,7 +23,11 @@ const SettingPreset = ({
     <Descriptions
       title={className}
       bordered
-      labelStyle={{ backgroundColor: "white" }}
+      labelStyle={{
+        backgroundColor: "RGB(255,247,241)",
+        fontWeight: "bold",
+        fontSize: "15px",
+      }}
     >
       <Descriptions.Item label="장비" span={1}>
         {equip}
@@ -105,10 +109,8 @@ const Guide = () => {
 
   return (
     <AppLayout>
-      <div>
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          LastUpdated. 21.07.24
-        </div>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <div>LastUpdated. 21.07.24</div>
       </div>
       <CardWrapper
         title="전 클래스"

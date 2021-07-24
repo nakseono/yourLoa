@@ -7,3 +7,18 @@
 .ant-descriptions-header {
   margin-bottom: 0.5rem !important;
 }
+
+.ant-descriptions-view > table {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.ant-descriptions-view > th,
+td {
+  border: 1px solid !important;
+}
+
+.ant-descriptions-view > td,
+th {
+  border: 1px solid !important;
+}
