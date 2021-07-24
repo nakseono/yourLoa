@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Card } from "antd";
+import { Card, Descriptions } from "antd";
 import styled from "styled-components";
 
 import AppLayout from "../components/AppLayout.js";
@@ -9,6 +9,39 @@ import MagicianPage from "./Guide/GuidePages/Magician/MagicianPage";
 import HunterPage from "./Guide/GuidePages/Hunter/HunterPage";
 import FighterPage from "./Guide/GuidePages/Fighter/FighterPage";
 import AssasinPage from "./Guide/GuidePages/Assasin/AssasinPage";
+
+const SettingPreset = ({
+  className,
+  equip,
+  mainChar,
+  subChar,
+  mark,
+  skill,
+  gem,
+}) => {
+  return (
+    <Descriptions title={className} bordered>
+      <Descriptions.Item label="장비" span={1}>
+        {equip}
+      </Descriptions.Item>
+      <Descriptions.Item label="메인 특성" span={1}>
+        {mainChar}
+      </Descriptions.Item>
+      <Descriptions.Item label="보조 특성" span={1}>
+        {subChar}
+      </Descriptions.Item>
+      <Descriptions.Item label="각인" span={3}>
+        {mark}
+      </Descriptions.Item>
+      <Descriptions.Itme label="스킬트리 | 룬" span={3}>
+        {skill}
+      </Descriptions.Itme>
+      <Descriptions.Itme label="보석" span={3}>
+        {gem}
+      </Descriptions.Itme>
+    </Descriptions>
+  );
+};
 
 const Guide = () => {
   //! <-- states -->
@@ -103,11 +136,11 @@ const Guide = () => {
       ) : (
         <></>
       )}
-      {isWarrior ? <WarriorPage /> : <></>}
-      {isMagician ? <MagicianPage /> : <></>}
-      {isHunter ? <HunterPage /> : <></>}
-      {isFighter ? <FighterPage /> : <></>}
-      {isAssasin ? <AssasinPage /> : <></>}
+      {isWarrior ? <WarriorPage SettingPreset={SettingPreset} /> : <></>}
+      {isMagician ? <MagicianPage SettingPreset={SettingPreset} /> : <></>}
+      {isHunter ? <HunterPage SettingPreset={SettingPreset} /> : <></>}
+      {isFighter ? <FighterPage SettingPreset={SettingPreset} /> : <></>}
+      {isAssasin ? <AssasinPage SettingPreset={SettingPreset} /> : <></>}
     </AppLayout>
   );
 };

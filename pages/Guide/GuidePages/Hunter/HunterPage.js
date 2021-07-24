@@ -8,7 +8,7 @@ import HawkEye from "./HawkEye";
 import Scouter from "./Scouter";
 import Gunslinger from "./Gunslinger";
 
-const HunterPage = () => {
+const HunterPage = ({ SettingPreset }) => {
   const [isBlaster, setBlasterPage] = useState(false);
   const [isDevilHunter, setDevilHunterPage] = useState(false);
   const [isHawkEye, setHawkEyePage] = useState(false);
@@ -112,11 +112,11 @@ const HunterPage = () => {
         </Card.Grid>
       </CardWrapper>
       <ClassWrapper>
-        {isBlaster ? <Blaster /> : <></>}
-        {isDevilHunter ? <DevilHunter /> : <></>}
-        {isHawkEye ? <HawkEye /> : <></>}
-        {isScouter ? <Scouter /> : <></>}
-        {isGunslinger ? <Gunslinger /> : <></>}
+        {isBlaster ? <Blaster SettingPreset={SettingPreset} /> : <></>}
+        {isDevilHunter ? <DevilHunter SettingPreset={SettingPreset} /> : <></>}
+        {isHawkEye ? <HawkEye SettingPreset={SettingPreset} /> : <></>}
+        {isScouter ? <Scouter SettingPreset={SettingPreset} /> : <></>}
+        {isGunslinger ? <Gunslinger SettingPreset={SettingPreset} /> : <></>}
       </ClassWrapper>
     </>
   );

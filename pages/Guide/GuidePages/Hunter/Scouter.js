@@ -1,21 +1,9 @@
 import React from "react";
-import { Descriptions, Divider } from "antd";
+import { Divider } from "antd";
 
-const SettingPreset = ({ className, equip, mainChar, subChar, mark }) => {
-  return (
-    <Descriptions title={className} bordered>
-      <Descriptions.Item label="군단장 장비">{equip}</Descriptions.Item>
-      <Descriptions.Item label="메인 특성">{mainChar}</Descriptions.Item>
-      <Descriptions.Item label="보조 특성">{subChar}</Descriptions.Item>
+// 장비, 보석, 특성(메인,서브), 각인, 스킬/룬
 
-      <Descriptions.Item label="각인" span={3}>
-        {mark}
-      </Descriptions.Item>
-    </Descriptions>
-  );
-};
-
-const Scouter = () => {
+const Scouter = ({ SettingPreset }) => {
   return (
     <>
       <SettingPreset
