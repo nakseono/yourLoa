@@ -8,7 +8,7 @@ import LanceMaster from "./LanceMaster";
 import SoulMaster from "./SoulMaster";
 import Striker from "./Striker";
 
-const FighterPage = () => {
+const FighterPage = ({ SettingPreset }) => {
   const [isBattleMaster, setBattleMasterPage] = useState(false);
   const [isInfighter, setInfighterPage] = useState(false);
   const [isLanceMaster, setLanceMasterPage] = useState(false);
@@ -112,11 +112,15 @@ const FighterPage = () => {
         </Card.Grid>
       </CardWrapper>
       <ClassWrapper>
-        {isBattleMaster ? <BattleMaster /> : <></>}
-        {isInfighter ? <Infighter /> : <></>}
-        {isLanceMaster ? <LanceMaster /> : <></>}
-        {isSoulMaster ? <SoulMaster /> : <></>}
-        {isStriker ? <Striker /> : <></>}
+        {isBattleMaster ? (
+          <BattleMaster SettingPreset={SettingPreset} />
+        ) : (
+          <></>
+        )}
+        {isInfighter ? <Infighter SettingPreset={SettingPreset} /> : <></>}
+        {isLanceMaster ? <LanceMaster SettingPreset={SettingPreset} /> : <></>}
+        {isSoulMaster ? <SoulMaster SettingPreset={SettingPreset} /> : <></>}
+        {isStriker ? <Striker SettingPreset={SettingPreset} /> : <></>}
       </ClassWrapper>
     </>
   );

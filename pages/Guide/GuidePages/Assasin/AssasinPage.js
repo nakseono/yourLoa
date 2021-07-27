@@ -6,7 +6,7 @@ import Blade from "./Blade";
 import Demonic from "./Demonic";
 import Reaper from "./Reaper";
 
-const AssasinPage = () => {
+const AssasinPage = ({ SettingPreset }) => {
   const [isBlade, setBladePage] = useState(false);
   const [isDemonic, setDemonicPage] = useState(false);
   const [isReaper, setReaperPage] = useState(false);
@@ -80,9 +80,9 @@ const AssasinPage = () => {
         </Card.Grid>
       </CardWrapper>
       <ClassWrapper>
-        {isBlade ? <Blade /> : <></>}
-        {isDemonic ? <Demonic /> : <></>}
-        {isReaper ? <Reaper /> : <></>}
+        {isBlade ? <Blade SettingPreset={SettingPreset} /> : <></>}
+        {isDemonic ? <Demonic SettingPreset={SettingPreset} /> : <></>}
+        {isReaper ? <Reaper SettingPreset={SettingPreset} /> : <></>}
       </ClassWrapper>
     </>
   );

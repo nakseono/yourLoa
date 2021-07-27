@@ -7,7 +7,7 @@ import Bard from "./Bard";
 import Sorceress from "./Sorceress";
 import Summoner from "./Summoner";
 
-const MagicianPage = () => {
+const MagicianPage = ({ SettingPreset }) => {
   const [isArcana, setArcanaPage] = useState(false);
   const [isBard, setBardPage] = useState(false);
   const [isSummoner, setSummonerPage] = useState(false);
@@ -94,10 +94,10 @@ const MagicianPage = () => {
         </Card.Grid>
       </CardWrapper>
       <ClassWrapper>
-        {isArcana ? <Arcana /> : <></>}
-        {isBard ? <Bard /> : <></>}
-        {isSummoner ? <Summoner /> : <></>}
-        {isSorceress ? <Sorceress /> : <></>}
+        {isArcana ? <Arcana SettingPreset={SettingPreset} /> : <></>}
+        {isBard ? <Bard SettingPreset={SettingPreset} /> : <></>}
+        {isSummoner ? <Summoner SettingPreset={SettingPreset} /> : <></>}
+        {isSorceress ? <Sorceress SettingPreset={SettingPreset} /> : <></>}
       </ClassWrapper>
     </>
   );

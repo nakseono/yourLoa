@@ -7,7 +7,7 @@ import Destroyer from "./Destroyer";
 import Holyknight from "./Holyknight";
 import Warlord from "./Warlord";
 
-const WarriorPage = () => {
+const WarriorPage = ({ SettingPreset }) => {
   const [isBerserker, setBerserkerPage] = useState(false);
   const [isDestroyer, setDestroyerPage] = useState(false);
   const [isHolyknight, setHolyknightPage] = useState(false);
@@ -94,10 +94,10 @@ const WarriorPage = () => {
         </Card.Grid>
       </CardWrapper>
       <ClassWrapper>
-        {isBerserker ? <Berserker /> : <></>}
-        {isDestroyer ? <Destroyer /> : <></>}
-        {isHolyknight ? <Holyknight /> : <></>}
-        {isWarlord ? <Warlord /> : <></>}
+        {isBerserker ? <Berserker SettingPreset={SettingPreset} /> : <></>}
+        {isDestroyer ? <Destroyer SettingPreset={SettingPreset} /> : <></>}
+        {isHolyknight ? <Holyknight SettingPreset={SettingPreset} /> : <></>}
+        {isWarlord ? <Warlord SettingPreset={SettingPreset} /> : <></>}
       </ClassWrapper>
     </>
   );
