@@ -120,7 +120,12 @@ const Destroyer = ({ SettingPreset }) => {
     <>
       <CardWrapper
         title="디스트로이어 직업 각인별 구분"
-        headStyle={{ display: "flex", justifyContent: "center" }}
+        headStyle={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
         size="small"
       >
         <Card.Grid

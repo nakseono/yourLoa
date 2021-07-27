@@ -42,10 +42,6 @@ const MagicianPage = ({ SettingPreset }) => {
     margin-top: 1rem;
   `;
 
-  const ClassWrapper = styled.div`
-    margin-top: 1rem;
-  `;
-
   return (
     <>
       <CardWrapper
@@ -93,12 +89,10 @@ const MagicianPage = ({ SettingPreset }) => {
           <div>소서리스</div>
         </Card.Grid>
       </CardWrapper>
-      <ClassWrapper>
-        {isArcana ? <Arcana SettingPreset={SettingPreset} /> : <></>}
-        {isBard ? <Bard SettingPreset={SettingPreset} /> : <></>}
-        {isSummoner ? <Summoner SettingPreset={SettingPreset} /> : <></>}
-        {isSorceress ? <Sorceress SettingPreset={SettingPreset} /> : <></>}
-      </ClassWrapper>
+      {isArcana ? <Arcana SettingPreset={SettingPreset} /> : <></>}
+      {isBard ? <Bard SettingPreset={SettingPreset} /> : <></>}
+      {isSummoner ? <Summoner SettingPreset={SettingPreset} /> : <></>}
+      {isSorceress ? <Sorceress SettingPreset={SettingPreset} /> : <></>}
     </>
   );
 };

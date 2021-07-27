@@ -49,10 +49,6 @@ const FighterPage = ({ SettingPreset }) => {
     margin-top: 1rem;
   `;
 
-  const ClassWrapper = styled.div`
-    margin-top: 1rem;
-  `;
-
   return (
     <>
       <CardWrapper
@@ -111,17 +107,11 @@ const FighterPage = ({ SettingPreset }) => {
           <div>스트라이커</div>
         </Card.Grid>
       </CardWrapper>
-      <ClassWrapper>
-        {isBattleMaster ? (
-          <BattleMaster SettingPreset={SettingPreset} />
-        ) : (
-          <></>
-        )}
-        {isInfighter ? <Infighter SettingPreset={SettingPreset} /> : <></>}
-        {isLanceMaster ? <LanceMaster SettingPreset={SettingPreset} /> : <></>}
-        {isSoulMaster ? <SoulMaster SettingPreset={SettingPreset} /> : <></>}
-        {isStriker ? <Striker SettingPreset={SettingPreset} /> : <></>}
-      </ClassWrapper>
+      {isBattleMaster ? <BattleMaster SettingPreset={SettingPreset} /> : <></>}
+      {isInfighter ? <Infighter SettingPreset={SettingPreset} /> : <></>}
+      {isLanceMaster ? <LanceMaster SettingPreset={SettingPreset} /> : <></>}
+      {isSoulMaster ? <SoulMaster SettingPreset={SettingPreset} /> : <></>}
+      {isStriker ? <Striker SettingPreset={SettingPreset} /> : <></>}
     </>
   );
 };

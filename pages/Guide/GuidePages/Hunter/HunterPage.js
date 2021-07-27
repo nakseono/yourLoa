@@ -49,10 +49,6 @@ const HunterPage = ({ SettingPreset }) => {
     margin-top: 1rem;
   `;
 
-  const ClassWrapper = styled.div`
-    margin-top: 1rem;
-  `;
-
   return (
     <>
       <CardWrapper
@@ -111,13 +107,11 @@ const HunterPage = ({ SettingPreset }) => {
           <div>건슬링어</div>
         </Card.Grid>
       </CardWrapper>
-      <ClassWrapper>
-        {isBlaster ? <Blaster SettingPreset={SettingPreset} /> : <></>}
-        {isDevilHunter ? <DevilHunter SettingPreset={SettingPreset} /> : <></>}
-        {isHawkEye ? <HawkEye SettingPreset={SettingPreset} /> : <></>}
-        {isScouter ? <Scouter SettingPreset={SettingPreset} /> : <></>}
-        {isGunslinger ? <Gunslinger SettingPreset={SettingPreset} /> : <></>}
-      </ClassWrapper>
+      {isBlaster ? <Blaster SettingPreset={SettingPreset} /> : <></>}
+      {isDevilHunter ? <DevilHunter SettingPreset={SettingPreset} /> : <></>}
+      {isHawkEye ? <HawkEye SettingPreset={SettingPreset} /> : <></>}
+      {isScouter ? <Scouter SettingPreset={SettingPreset} /> : <></>}
+      {isGunslinger ? <Gunslinger SettingPreset={SettingPreset} /> : <></>}
     </>
   );
 };

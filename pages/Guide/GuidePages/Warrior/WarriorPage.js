@@ -42,15 +42,16 @@ const WarriorPage = ({ SettingPreset }) => {
     margin-top: 1rem;
   `;
 
-  const ClassWrapper = styled.div`
-    margin-top: 1rem;
-  `;
-
   return (
     <>
       <CardWrapper
         title="전사"
-        headStyle={{ display: "flex", justifyContent: "center" }}
+        headStyle={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
         size="small"
       >
         <Card.Grid
@@ -93,12 +94,10 @@ const WarriorPage = ({ SettingPreset }) => {
           <div>워로드</div>
         </Card.Grid>
       </CardWrapper>
-      <ClassWrapper>
-        {isBerserker ? <Berserker SettingPreset={SettingPreset} /> : <></>}
-        {isDestroyer ? <Destroyer SettingPreset={SettingPreset} /> : <></>}
-        {isHolyknight ? <Holyknight SettingPreset={SettingPreset} /> : <></>}
-        {isWarlord ? <Warlord SettingPreset={SettingPreset} /> : <></>}
-      </ClassWrapper>
+      {isBerserker ? <Berserker SettingPreset={SettingPreset} /> : <></>}
+      {isDestroyer ? <Destroyer SettingPreset={SettingPreset} /> : <></>}
+      {isHolyknight ? <Holyknight SettingPreset={SettingPreset} /> : <></>}
+      {isWarlord ? <Warlord SettingPreset={SettingPreset} /> : <></>}
     </>
   );
 };

@@ -52,11 +52,11 @@ const RaidSkillTree = (
 const SkillGem = (
   <>
     <PointDiv>딜증 보석 (멸화)</PointDiv>
-    <div>헬블레이드 템페스트 피니쉬 스트라이크웨이브 블러 블러</div>
+    <div>헬블레이드 / 템페스트 / 피니쉬 / 스트라이크웨이브 / 블러</div>
     <br />
     <PointDiv>쿨감 보석 (홍염)</PointDiv>
     <div>
-      스트라이크웨이브 피니쉬 헬블레이드 레드더스트 윈드블레이드블러 블러
+      스트라이크 웨이브 / 피니쉬 / 헬블레이드 / 레드더스트 / 윈드블레이드 / 블러
     </div>
   </>
 );
@@ -64,6 +64,9 @@ const SkillGem = (
 const Berserker = ({ SettingPreset }) => {
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <div>LastUpdated. 21.07.27</div>
+      </div>
       <CommentWrapper>
         ❗️ 현재 버서커의 직업각인 중 "광기" 각인은 그 효율이 매우 낮아 채용하지
         않습니다.
