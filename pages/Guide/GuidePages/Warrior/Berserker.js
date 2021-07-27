@@ -5,6 +5,17 @@ const PointDiv = styled.div`
   font-size: 16px;
   font-weight: bold;
 `;
+const CommentWrapper = styled.div`
+  font-weight: bold;
+  font-size: 16px;
+  height: 50px;
+  border: 1px solid;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+`;
 
 const RaidSkillTree = (
   <>
@@ -50,33 +61,13 @@ const SkillGem = (
   </>
 );
 
-const ChaosSkillTree = (
-  <>
-    <div>레드더스트10 - 빠른준비, 급소타격, 붉은파도 - 출혈</div>
-    <div>피니쉬 스트라이크10 - 강화된일격, 마무리일격, 확인사살 - 질풍 </div>
-    <div>템페스트 슬래쉬10 - 빠른준비, 강화일격, 휘몰아치기 - 풍요 </div>
-    <div>스트라이크웨이브10 - 빠른준비, 켈베로스, 블레이즈웨이브 - 질풍</div>
-    <div>훨윈드10 - 지속증, 갈라진칼날, 진공베기 - 출혈</div>
-    <div>헬블레이드10 - 범위증가, 융해, 대지뒤집기 - 질풍</div>
-    <div>오러블레이드7 - 원거리타격, 파괴</div>
-    <div>첫 번째 각성기 채용</div>
-    <br />
-    <PointDiv>❗️괄호 스킬들은 취향따라 추가할만한 스킬입니다.</PointDiv>
-    <div>(소드스톰 7 or 10 - 빠른준비, 후폭풍, 화염 OR 지진파동)</div>
-    <div>
-      (윈드블레이드10 - 가속 or 빠른준비, 급소타격, 윈드스위프트) or (메일스톰
-      10 - 날렵, 급소, 화염)
-    </div>
-  </>
-);
-
 const Berserker = ({ SettingPreset }) => {
   return (
     <>
-      <div style={{ fontWeight: "600" }}>
+      <CommentWrapper>
         ❗️ 현재 버서커의 직업각인 중 "광기" 각인은 그 효율이 매우 낮아 채용하지
         않습니다.
-      </div>
+      </CommentWrapper>
       <SettingPreset
         className="광전사의 비기 버서커"
         equip="6지배"
@@ -85,7 +76,6 @@ const Berserker = ({ SettingPreset }) => {
         mark="원한 / 정기흡수 / 돌격대장 / 각성 / 광전사의 비기"
         skill={RaidSkillTree}
         gem={SkillGem}
-        chaos={ChaosSkillTree}
       />
     </>
   );
