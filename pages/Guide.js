@@ -18,6 +18,7 @@ const SettingPreset = ({
   mark,
   skill,
   gem,
+  chaos,
 }) => {
   return (
     <Descriptions
@@ -46,6 +47,9 @@ const SettingPreset = ({
       </Descriptions.Item>
       <Descriptions.Item label="보석" span={3}>
         {gem}
+      </Descriptions.Item>
+      <Descriptions.Item label="카던용 스킬트리" span={3}>
+        {chaos}
       </Descriptions.Item>
     </Descriptions>
   );
