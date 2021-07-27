@@ -95,7 +95,7 @@ const Guide = () => {
 
   const CardWrapper = styled(Card)`
     border: 0.5px solid;
-    /* margin-top: 1.5rem; */
+    margin-top: 1.5rem;
   `;
 
   const CardCompoStyled = styled(Card.Grid)`
@@ -109,12 +109,14 @@ const Guide = () => {
 
   return (
     <AppLayout>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <div>LastUpdated. 21.07.24</div>
-      </div>
       <CardWrapper
         title="전 클래스"
-        headStyle={{ display: "flex", justifyContent: "center" }}
+        headStyle={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
         size="small"
       >
         <CardCompoStyled onClick={clickWarrior}>
