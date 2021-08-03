@@ -10,6 +10,7 @@ const CouponWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 10px;
 `;
 
 const CouponTitle = styled.div`
@@ -20,7 +21,7 @@ const CouponTitle = styled.div`
 const CouponCode = styled.div`
   font-size: 19px;
   font-weight: bold;
-  color: purple;
+  color: #d3687f;
 `;
 
 const Coupon = ({ title, date, code }) => {
