@@ -51,7 +51,7 @@ const Main = () => {
             code="모코코만큼가득담아드려요"
           />
         </CouponListUp>
-        <DividerWrapper>이벤트 알림</DividerWrapper>
+        <Divider>이벤트 알림</Divider>
         <BannerWrapper>이벤트 배너</BannerWrapper>
         <BannerWrapper>이벤트 배너</BannerWrapper>
         <DividerWrapper>읽어보면 좋은 꿀팁</DividerWrapper>
