@@ -110,7 +110,6 @@ const Destroyer = ({ SettingPreset }) => {
 
   const CardWrapper = styled(Card)`
     border: 0.5px solid;
-    margin-top: 1rem;
   `;
   const ClassWrapper = styled.div`
     margin-top: 1rem;
@@ -118,6 +117,9 @@ const Destroyer = ({ SettingPreset }) => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <div>LastUpdated. 21.07.27</div>
+      </div>
       <CardWrapper
         title="디스트로이어 직업 각인별 구분"
         headStyle={{
