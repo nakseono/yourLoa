@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography } from "antd";
+import { Typography, Col, Row } from "antd";
 
 const { Paragraph } = Typography;
 
@@ -14,8 +14,7 @@ const TextCopy = styled(Paragraph)`
 const CouponWrapper = styled.div`
   height: 6rem;
   border: solid 1px;
-  width: 30%;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -29,11 +28,13 @@ const CouponTitle = styled.div`
 
 const Coupon = ({ title, date, code }) => {
   return (
-    <CouponWrapper>
-      <CouponTitle>{title}</CouponTitle>
-      <div>{date}</div>
-      <TextCopy copyable>{code}</TextCopy>
-    </CouponWrapper>
+    <Col span={7}>
+      <CouponWrapper>
+        <CouponTitle>{title}</CouponTitle>
+        <div>{date}</div>
+        <TextCopy copyable>{code}</TextCopy>
+      </CouponWrapper>
+    </Col>
   );
 };
 
