@@ -20,7 +20,7 @@ const MenuItemWrapper = styled(Menu.Item)`
 
 const NavBar = () => {
   return (
-    <div style={{ borderBottom: "solid 0.5px" }}>
+    <div style={{ borderBottom: "solid 2px" }}>
       <MenuWrapper mode="horizontal">
         <MenuItemWrapper>
           <Link href="/">
