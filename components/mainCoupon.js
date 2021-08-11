@@ -28,7 +28,7 @@ const CouponTitle = styled.div`
 
 const Coupon = ({ title, date, code }) => {
   return (
-    <Col span={7}>
+    <Col span={7} style={{ padding: "10px 0px" }}>
       <CouponWrapper>
         <CouponTitle>{title}</CouponTitle>
         <div>{date}</div>
