@@ -22,3 +22,7 @@ td {
 th {
   border: 1px solid !important;
 }
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
