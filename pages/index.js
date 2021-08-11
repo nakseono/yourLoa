@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Divider } from "antd";
+import { Divider, Row } from "antd";
 
 import AppLayout from "../components/AppLayout.js";
 import Coupon from "../components/mainCoupon";
@@ -34,7 +34,7 @@ const Main = () => {
     <AppLayout>
       <InLayoutContent>
         <Divider>이벤트 쿠폰 코드</Divider>
-        <CouponListUp>
+        <Row style={{ display: "flex", justifyContent: "space-around" }}>
           <Coupon
             title="로아온 미니"
             date="2021.06.19(토) ~ 09.22(수)"
@@ -50,7 +50,17 @@ const Main = () => {
             date="2021.07.28(수) ~ 09.30(목)"
             code="모코코만큼가득담아드려요"
           />
-        </CouponListUp>
+          <Coupon
+            title="이디야 콜라보 기념"
+            date="2021.08.11(수) ~ 09.30(목)"
+            code="모코코지금어디야이디야"
+          />
+          <Coupon
+            title="소서리스 출시 기념"
+            date="2021.08.11(수) ~ 09.28(화)"
+            code="원소의지배자소서리스"
+          />
+        </Row>
         <Divider>이벤트 알림</Divider>
         <BannerWrapper>이벤트 배너</BannerWrapper>
         <BannerWrapper>이벤트 배너</BannerWrapper>
