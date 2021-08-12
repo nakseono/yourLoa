@@ -30,6 +30,11 @@ const TodoWrapper = styled(Col)`
   height: 230px;
 `;
 
+const CopyRight = styled.div`
+  float: right;
+  margin-right: 3rem;
+`;
+
 const AppLayout = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
 
@@ -56,6 +61,7 @@ const AppLayout = ({ children }) => {
           </TodoWrapper>
         </SubCol>
       </Row>
+      <CopyRight>made by nakseono & sprumin @ 2021</CopyRight>
     </>
   );
 };
