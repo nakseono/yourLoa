@@ -8,7 +8,7 @@ const CardAct = styled.a`
   color: black !important;
 `;
 
-const LoginForm = ({ loginFunc }) => {
+const LoginForm = () => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
@@ -23,7 +23,6 @@ const LoginForm = ({ loginFunc }) => {
           <CardAct>회원가입</CardAct>
         </Link>,
       ]}
-      className="LoginFormCard"
     >
       <Form
         name="normal_login"
@@ -78,7 +77,6 @@ const LoginForm = ({ loginFunc }) => {
             htmlType="submit"
             className="login-form-button"
             style={{ width: "100%" }}
-            onClick={loginFunc}
           >
             로그인
           </Button>

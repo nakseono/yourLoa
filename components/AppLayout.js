@@ -36,12 +36,6 @@ const CopyRight = styled.div`
 `;
 
 const AppLayout = ({ children }) => {
-  const [isLogin, setIsLogin] = useState(false);
-
-  const onChangeLogin = () => {
-    isLogin ? setIsLogin(false) : setIsLogin(true);
-  };
-
   return (
     <>
       <Title>yourLoa</Title>
@@ -51,11 +45,8 @@ const AppLayout = ({ children }) => {
           <div>{children}</div>
         </MainCol>
         <SubCol>
-          {isLogin ? (
-            <UserProfile loginFunc={onChangeLogin} />
-          ) : (
-            <LoginForm loginFunc={onChangeLogin} />
-          )}
+          {/* <UserProfile /> */}
+          <LoginForm />
           <TodoWrapper>
             <TodoListCut />
           </TodoWrapper>
