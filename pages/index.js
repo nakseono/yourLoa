@@ -60,6 +60,11 @@ const Main = () => {
             date="2021.08.11(수) ~ 09.28(화)"
             code="원소의지배자소서리스"
           />
+          <Coupon
+            title="우리가함께하는특별한여름"
+            date="2021.08.13(금) ~ 09.29(수) "
+            code="우리가함께하는특별한여름"
+          />
         </Row>
         <Divider>이벤트 알림</Divider>
         <BannerWrapper>이벤트 배너</BannerWrapper>
