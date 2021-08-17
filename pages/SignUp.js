@@ -3,6 +3,7 @@ import { Card, Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import styled from "styled-components";
+import axios from "axios";
 
 const SignUpPage = styled.div`
   width: 700px;
@@ -22,11 +23,28 @@ const SignUpTitle = styled.div`
 
 const SignUp = () => {
   const [id, setId] = useState("");
+  const [nick, setNick] = useState("");
   const [pwd, setPwd] = useState("");
   const [pwdCheck, setPwdCheck] = useState("");
 
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const signUpPost = () => {
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/account/register/",
+      data: {
+        username: id,
+        password1: pwd,
+        password2: pwdCheck,
+      },
+    })
+      .then((res) => {
+        if (res.status === 201) {
+          console.log("로그인 성공");
+        }
+      })
+      .catch((error) => {
+        console.log("error : " + JSON.stringify(error));
+      });
   };
 
   return (
@@ -45,16 +63,35 @@ const SignUp = () => {
             </Link>,
           ]}
         >
-          {/* 아이디 관련 */}
-          <div>아이디</div>
           <Form
             name="normal_login"
             className="login-form"
             initialValues={{
               remember: true,
             }}
-            onFinish={onFinish}
           >
+            {/* ---------- 닉네임 관련 ---------- */}
+            <div>닉네임</div>
+            <Form.Item
+              name="nickname"
+              rules={[
+                {
+                  required: true,
+                  message: "닉네임을 입력해주세요!",
+                },
+              ]}
+              style={{ marginBottom: "30px" }}
+            >
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="닉네임을 입력해주세요."
+                onChange={(e) => {
+                  setNick(e.target.value);
+                }}
+              />
+            </Form.Item>
+            {/* ---------- 아이디 관련 ---------- */}
+            <div>ID</div>
             <Form.Item
               name="username"
               rules={[
@@ -68,9 +105,12 @@ const SignUp = () => {
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="아이디를 입력해주세요."
+                onChange={(e) => {
+                  setId(e.target.value);
+                }}
               />
             </Form.Item>
-            {/* 비밀번호 관련 */}
+            {/* ---------- 비밀번호 관련 ---------- */}
             <div>비밀번호</div>
             <Form.Item
               name="password"
@@ -86,9 +126,12 @@ const SignUp = () => {
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
                 placeholder="비밀번호를 입력해주세요."
+                onChange={(e) => {
+                  setPwd(e.target.value);
+                }}
               />
             </Form.Item>{" "}
-            {/* 비밀번호 확인 관련 */}
+            {/* ---------- 비밀번호 확인 관련 ---------- */}
             <div>비밀번호 확인</div>
             <Form.Item
               name="passwordCheck"
@@ -104,6 +147,9 @@ const SignUp = () => {
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
                 placeholder="비밀번호를 확인해주세요."
+                onChange={(e) => {
+                  setPwdCheck(e.target.value);
+                }}
               />
             </Form.Item>
             <Form.Item style={{ marginBottom: "0" }}>
@@ -112,6 +158,7 @@ const SignUp = () => {
                 htmlType="submit"
                 className="login-form-button"
                 style={{ width: "100%" }}
+                onClick={signUpPost}
               >
                 회원가입
               </Button>
