@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Card, Form, Input, Button, Checkbox } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  LockOutlined,
+  ArrowLeftOutlined,
+} from "@ant-design/icons";
 import Link from "next/link";
 import styled from "styled-components";
 import axios from "axios";
 
 const SignUpPage = styled.div`
-  width: 700px;
+  width: 650px;
   margin: auto;
 `;
 
@@ -19,6 +23,10 @@ const SignUpTitle = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+`;
+
+const BackMent = styled.div`
+  border: solid 0.5px;
 `;
 
 const SignUp = () => {
@@ -51,7 +59,7 @@ const SignUp = () => {
     <SignUpPage>
       <>
         <Link href="/">
-          <div>돌아가기</div>
+          <ArrowLeftOutlined />
         </Link>
         <SignUpTitle>
           <div>YourLoa 회원가입</div>
