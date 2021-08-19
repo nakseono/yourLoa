@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Form, Input, Button, Checkbox } from "antd";
+import { Card, Form, Input, Button, Modal } from "antd";
 import {
   UserOutlined,
   LockOutlined,
@@ -8,6 +8,7 @@ import {
 import Link from "next/link";
 import styled from "styled-components";
 import axios from "axios";
+import Router from "next/router";
 
 const SignUpPage = styled.div`
   width: 650px;
@@ -25,15 +26,23 @@ const SignUpTitle = styled.div`
   margin-bottom: 1rem;
 `;
 
-const BackMent = styled.div`
-  border: solid 0.5px;
-`;
-
 const SignUp = () => {
   const [id, setId] = useState("");
   const [nick, setNick] = useState("");
   const [pwd, setPwd] = useState("");
   const [pwdCheck, setPwdCheck] = useState("");
+
+  const successModal = () => {
+    Modal.success({
+      title: "회원가입이 정상적으로 처리되었습니다!",
+      content: "메인화면에서 로그인을 진행해주세요 :)",
+      okText: "넹!",
+      onOk() {
+        Router.push("/");
+      },
+      centered: true,
+    });
+  };
 
   const signUpPost = () => {
     axios({
@@ -47,7 +56,7 @@ const SignUp = () => {
     })
       .then((res) => {
         if (res.status === 201) {
-          console.log("로그인 성공");
+          successModal();
         }
       })
       .catch((error) => {
