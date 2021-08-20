@@ -24,11 +24,6 @@ const DividerWrapper = styled(Divider)`
   margin-top: 2em !important;
 `;
 
-const CouponListUp = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
-
 const Main = () => {
   return (
     <AppLayout>
