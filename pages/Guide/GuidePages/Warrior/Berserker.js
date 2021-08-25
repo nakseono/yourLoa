@@ -73,10 +73,10 @@ const Berserker = ({ SettingPreset }) => {
       </CommentWrapper>
       <SettingPreset
         className="광전사의 비기 버서커"
-        equip="6지배"
+        equip="6지배 | 6악몽"
         mainChar="특화"
         subChar="치명"
-        mark="원한 / 정기흡수 / 돌격대장 / 각성 / 광전사의 비기"
+        mark="원한 / 예리한 둔기 / 돌격대장 / 각성 / 정기흡수 2 / 광전사의 비기 1"
         skill={RaidSkillTree}
         gem={SkillGem}
       />
