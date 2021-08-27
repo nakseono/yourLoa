@@ -169,7 +169,7 @@ const Destroyer = ({ SettingPreset }) => {
         {isHammer ? (
           <SettingPreset
             className="분망 디트"
-            equip="6사멸"
+            equip="6사멸 | 6악몽 | 6환각"
             mainChar="치명"
             subChar="특화 or 신속"
             mark="원한 / 슈퍼차지 / 바리게이트 / 결투의 대가 or 저주받은 인형 or 정기 흡수 / 분노의 망치"
