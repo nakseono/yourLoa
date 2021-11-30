@@ -7,3 +7,5 @@
 server side는 협업하는 친구([sprumin](https://github.com/sprumin))의 repo에 올라갔습니다.
 
 server side Link : https://github.com/sprumin/YourLoa
+
+11/30 다시 시작
