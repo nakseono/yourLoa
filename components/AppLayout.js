@@ -1,35 +1,82 @@
+import { Breadcrumb, Layout, Menu } from "antd";
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-const HeaderNavigation = () => {
-  return (
-    <>
-      <div>캐릭터 검색</div>
-      <div>스쿼드 메이커</div>
-      <div>경매 분배금 계산</div>
-      <div>자유게시판</div>
-    </>
-  );
-};
+const { Header, Content, Footer } = Layout;
 
-const FooterCopyRight = () => {
-  return (
-    <>
-      <div>©made by nakseono</div>
-      <div>github.com/nakseono</div>
-    </>
-  );
-};
+// .site-layout .site-layout-background {
+//   background: #fff;
+// }
 
-const AppLayout = ({ children }) => {
-  return (
-    <div>
-      <HeaderNavigation />
-      <div>{children}</div>
-      <FooterCopyRight />
-    </div>
-  );
-};
+const Logo = styled.div`
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.2);
+`;
+
+const AppLayout = ({ children }) => (
+  <Layout>
+    <Header
+      style={{
+        position: "fixed",
+        zIndex: 1,
+        width: "100%",
+      }}
+    >
+      <Logo />
+      <Menu theme="dark" mode="horizontal">
+        <Menu.Item key="first">
+          <Link href="/">
+            <a>캐릭터 검색</a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="second">
+          <Link href="/squadMaker">
+            <a>스쿼드 메이커</a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="third">
+          <Link href="/auction">
+            <a>경매 분배금 계산기</a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="four">
+          <Link href="/board">
+            <a>자유게시판</a>
+          </Link>
+        </Menu.Item>
+      </Menu>
+    </Header>
+    <Content
+      className="site-layout"
+      style={{
+        padding: "0 50px",
+        marginTop: 64,
+        minHeight: 380,
+      }}
+    >
+      {children}
+    </Content>
+    <Footer
+      style={{
+        textAlign: "center",
+      }}
+    >
+      <div>
+        YourLoa ©made by{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/nakseono"
+        >
+          nakseono
+        </a>
+      </div>
+    </Footer>
+  </Layout>
+);
 
 export default AppLayout;
