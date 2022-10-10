@@ -1,4 +1,4 @@
-import { Breadcrumb, Layout, Menu } from "antd";
+import { Layout, Menu } from "antd";
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
@@ -53,9 +53,9 @@ const AppLayout = ({ children }) => (
     <Content
       className="site-layout"
       style={{
-        padding: "0 50px",
+        padding: "20px 50px",
         marginTop: 64,
-        minHeight: 380,
+        minHeight: 600,
       }}
     >
       {children}
