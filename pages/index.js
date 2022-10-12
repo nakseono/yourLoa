@@ -12,9 +12,18 @@ const UserSearchInput = styled(Input.Search)`
   width: 550px;
 `;
 
+const LogoSpace = styled.div`
+  display: flex;
+  margin: auto;
+  height: 170px;
+  width: 425px;
+  background-color: #325432;
+`
+
 const Home = () => {
   return (
     <AppLayout>
+      <LogoSpace>YOUR LOA LOGO</LogoSpace>
       <UserSearchInput placeholder="검색할 캐릭터 이름을 입력하세요." enterButton />
       <Row>
         <Col span={12}>
