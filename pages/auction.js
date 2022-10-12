@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import AppLayout from "../components/AppLayout";
 
-import { Typography, Input, Radio, Paragraph } from "antd";
+import { Typography, Input, Radio, Tooltip } from "antd";
 import styled from "styled-components";
 
 const { Title } = Typography;
@@ -82,8 +82,12 @@ const Auction = () => {
       />
 
       <PartyNumber defaultValue="competition" onChange={onChangeCompetition}>
-        <Radio.Button value="competition">경쟁</Radio.Button>
-        <Radio.Button value="party">분배</Radio.Button>
+        <Tooltip title="경쟁 금액은 경매에 참여하는 모두가 경쟁 상대로써, 얼마까지 입찰해야 손해를 보지 않는지 계산합니다.">
+          <Radio.Button value="competition">경쟁</Radio.Button>
+        </Tooltip>
+        <Tooltip title="분배 금액은 N명이 모두 합의하에 N빵 하는 것을 간주하고 계산합니다.">
+          <Radio.Button value="party">분배</Radio.Button>
+        </Tooltip>
       </PartyNumber>
 
       {competition ? (
@@ -105,16 +109,6 @@ const Auction = () => {
           </pre>
         </AuctionResult>
       )}
-
-      {/* <Typography>
-        <Paragraph>
-          <blockquote>
-            Notice : "분배" 금액은 N명이 모두 합의하에 N빵 하는 것을 간주하고
-            계산하는 것, "입찰" 금액은 경매에 참여하는 모두가 경쟁 상대로써,
-            거래소 가격 기준으로 얼마를 입찰해야 손해를 보지 않는지 계산하는 것
-          </blockquote>
-        </Paragraph>
-      </Typography> */}
     </AppLayout>
   );
 };
