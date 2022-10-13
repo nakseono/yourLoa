@@ -74,6 +74,8 @@ const AppLayout = ({ children }) => (
         >
           nakseono
         </a>
+        <br />
+        contact : nakseono@gmail.com
       </div>
     </Footer>
   </Layout>

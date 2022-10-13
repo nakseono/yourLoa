@@ -1,7 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
-
 import Head from "next/head";
+
+import wrapper from "../store/configureStore";
 
 const YourLoa = ({ Component }) => {
   return (
@@ -14,4 +15,4 @@ const YourLoa = ({ Component }) => {
   );
 };
 
-export default YourLoa;
+export default wrapper.withRedux(YourLoa);
