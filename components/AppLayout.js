@@ -1,4 +1,4 @@
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Button } from "antd";
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
@@ -26,7 +26,11 @@ const AppLayout = ({ children }) => (
         width: "100%",
       }}
     >
-      <Logo />
+      <Link href="/">
+        <a>
+          <Logo />
+        </a>
+      </Link>
       <Menu theme="dark" mode="horizontal">
         <Menu.Item key="first">
           <Link href="/">
