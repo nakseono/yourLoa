@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import AppLayout from "../components/AppLayout";
 import { Input, Col, Row } from "antd";
 import styled from "styled-components";
-import Notice from "../components/mainPages/Notice";
+import Notice from "../components/Notice";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
@@ -42,8 +42,6 @@ const Home = () => {
     router.push(`/searchUser/${nickname}`);
   }, [nickname]);
 
-  const { loadSearchUserInfoLoading } = useSelector((state) => state);
-
   return (
     <AppLayout>
       <LogoSpace>YOUR LOA LOGO</LogoSpace>
@@ -53,7 +51,6 @@ const Home = () => {
         value={nickname}
         onChange={onChangeNickname}
         placeholder="검색할 캐릭터 이름을 입력하세요."
-        loading={loadSearchUserInfoLoading}
         onSearch={onSearchForm}
         enterButton
       />

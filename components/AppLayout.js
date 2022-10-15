@@ -1,7 +1,8 @@
-import { Layout, Menu, Button } from "antd";
+import { Avatar, Layout, Menu, Button, Dropdown } from "antd";
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { UserOutlined } from "@ant-design/icons";
 
 const { Header, Content, Footer } = Layout;
 
@@ -16,6 +17,34 @@ const Logo = styled.div`
   margin: 16px 24px 16px 0;
   background: rgba(255, 255, 255, 0.2);
 `;
+
+const LoginSpace = styled.div`
+  position: absolute;
+  right: 20px;
+  top: -1px;
+`;
+
+const LoginMenu = (
+  <Menu
+    items={[
+      {
+        label: <a href="https://www.antgroup.com">1st menu item</a>,
+        key: "0",
+      },
+      {
+        label: <a href="https://www.aliyun.com">2nd menu item</a>,
+        key: "1",
+      },
+      {
+        type: "divider",
+      },
+      {
+        label: "3rd menu item",
+        key: "3",
+      },
+    ]}
+  />
+);
 
 const AppLayout = ({ children }) => {
   const items = [
@@ -68,6 +97,13 @@ const AppLayout = ({ children }) => {
           </a>
         </Link>
         <Menu theme="dark" mode="horizontal" items={items} />
+        <LoginSpace>
+          <Dropdown overlay={LoginMenu} trigger={["click"]}>
+            <a onClick={(e) => e.preventDefault()}>
+              <Avatar shape="square" size="large" icon={<UserOutlined />} />
+            </a>
+          </Dropdown>
+        </LoginSpace>
       </Header>
       <Content
         className="site-layout"
