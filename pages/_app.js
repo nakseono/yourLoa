@@ -1,22 +1,18 @@
 import React from "react";
-import styled from "styled-components";
-import { CookiesProvider } from "react-cookie";
+import "antd/dist/antd.css";
+import Head from "next/head";
 
-import "./App.css";
+import wrapper from "../store/configureStore";
 
-const ComponentWrapper = styled(CookiesProvider)`
-  width: 1400px;
-  padding: 20px 30px;
-  margin: auto;
-  margin-top: 20px;
-`;
-
-const App = ({ Component }) => {
+const YourLoa = ({ Component }) => {
   return (
-    <ComponentWrapper>
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+      </Head>
       <Component />
-    </ComponentWrapper>
+    </>
   );
 };
 
-export default App;
+export default wrapper.withRedux(YourLoa);
