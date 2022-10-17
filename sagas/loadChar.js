@@ -8,7 +8,7 @@ import {
   LOAD_SEARCH_USER_SASA_HISTORY_REQUSET,
   LOAD_SEARCH_USER_SASA_HISTORY_DONE,
   LOAD_SEARCH_USER_SASA_HISTORY_ERROR,
-} from "../reducers/loadUser";
+} from "../reducers/loadChar";
 
 function loadSearchUserInfoAPI(data) {
   // console.log(`loadSearchUserInfoAPI 작동`);
@@ -91,7 +91,7 @@ function* watchLoadSeachUserSasaHistory() {
   );
 }
 
-export default function* loadUserSaga() {
+export default function* loadCharSaga() {
   yield all([
     fork(watchLoadSeachUserInfo),
     fork(watchLoadSeachUserSasaHistory),

@@ -9,7 +9,7 @@ import UserInfoCreate from "../../components/UserInfoCreate";
 import {
   LOAD_SEARCH_USER_INFO_REQUSET,
   LOAD_SEARCH_USER_SASA_HISTORY_REQUSET,
-} from "../../reducers/loadUser";
+} from "../../reducers/loadChar";
 
 const searchUserInfo = () => {
   const router = useRouter();

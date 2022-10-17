@@ -1,8 +1,11 @@
-import { Avatar, Layout, Menu, Button, Dropdown } from "antd";
-import React from "react";
+import { Avatar, Layout, Menu, Button, Dropdown, Popover } from "antd";
+import React, { useCallback } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { UserOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+
+import { LOG_OUT_REQUEST } from "../reducers/user";
 
 const { Header, Content, Footer } = Layout;
 
@@ -24,29 +27,39 @@ const LoginSpace = styled.div`
   top: -1px;
 `;
 
-const LoginMenu = (
-  <Menu
-    items={[
-      {
-        label: <a href="https://www.antgroup.com">1st menu item</a>,
-        key: "0",
-      },
-      {
-        label: <a href="https://www.aliyun.com">2nd menu item</a>,
-        key: "1",
-      },
-      {
-        type: "divider",
-      },
-      {
-        label: "3rd menu item",
-        key: "3",
-      },
-    ]}
-  />
-);
-
 const AppLayout = ({ children }) => {
+  const dispatch = useDispatch();
+  const { logInUserInfo } = useSelector((state) => state.user);
+
+  const onLogOut = useCallback(() => {
+    dispatch({
+      type: LOG_OUT_REQUEST,
+    });
+  }, []);
+
+  const LoginMenu = (
+    <Menu
+      items={[
+        {
+          label: "내 정보",
+          key: "0",
+        },
+        {
+          label: "2nd menu item",
+          key: "1",
+        },
+        {
+          type: "divider",
+        },
+        {
+          label: "로그아웃",
+          key: "logout",
+          onClick: onLogOut,
+        },
+      ]}
+    />
+  );
+
   const items = [
     {
       label: (
@@ -98,11 +111,23 @@ const AppLayout = ({ children }) => {
         </Link>
         <Menu theme="dark" mode="horizontal" items={items} />
         <LoginSpace>
-          <Dropdown overlay={LoginMenu} trigger={["click"]}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Avatar shape="square" size="large" icon={<UserOutlined />} />
-            </a>
-          </Dropdown>
+          {logInUserInfo ? (
+            <Dropdown
+              overlay={LoginMenu}
+              trigger={["click"]}
+              overlayStyle={{ paddingTop: "30px" }}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Avatar shape="square" size="large" icon={<UserOutlined />} />
+              </a>
+            </Dropdown>
+          ) : (
+            <Button type="primary">
+              <Link href="/login" replace>
+                <a>로그인</a>
+              </Link>
+            </Button>
+          )}
         </LoginSpace>
       </Header>
       <Content

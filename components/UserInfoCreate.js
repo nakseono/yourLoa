@@ -22,7 +22,7 @@ const UserSubSlide = styled.div`
 `;
 
 const UserInfoCreate = () => {
-  const { searchUserInfo } = useSelector((state) => state.loadUser);
+  const { searchUserInfo } = useSelector((state) => state.loadChar);
 
   return searchUserInfo === null ? (
     <LoadingComment />
