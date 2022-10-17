@@ -3,6 +3,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
 import AppLayout from "../components/AppLayout";
@@ -25,6 +26,7 @@ const LoginFormWrapper = styled.div`
 
 const Login = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -44,14 +46,14 @@ const Login = () => {
   );
 
   const onSubmit = useCallback(() => {
-    console.log(`login request dispatch`);
     dispatch({
       type: LOG_IN_REQUEST,
       data: { userId: id, userPw: password },
     });
+    router.push("/");
   }, [id, password]);
 
-  const { logInLoading, logInError } = useSelector((state) => state.user);
+  const { logInError, logInUserInfo } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (logInError) {
@@ -120,7 +122,10 @@ const Login = () => {
             >
               로그인
             </Button>
-            Or <a href="">회원가입</a>
+            Or{" "}
+            <Link href="signUp">
+              <a>회원가입</a>
+            </Link>
           </Form.Item>
         </LoginForm>
       </LoginFormWrapper>
