@@ -1,8 +1,15 @@
 import React, { useEffect, useCallback } from "react";
-import { List, Space, Button } from "antd";
-import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
+import { List, Space, Button, Segmented } from "antd";
+import {
+  LikeOutlined,
+  MessageOutlined,
+  BarsOutlined,
+  EditOutlined,
+  StarOutlined,
+} from "@ant-design/icons";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 import AppLayout from "../components/AppLayout";
 
@@ -48,6 +55,15 @@ const ListWrapper = styled(List)`
   }
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+`;
+
+const WriteBtn = styled(Button)`
+  margin-left: auto;
+`;
+
 const data = Array.from({
   length: 23,
 }).map((_, i) => ({
@@ -66,13 +82,46 @@ const IconText = ({ icon, text }) => (
 
 const Board = () => {
   const router = useRouter();
+  const { logInUserInfo } = useSelector((state) => state.user);
 
   const onClickPost = useCallback(() => {
     router.push(`/posts/${1}`);
   }, []);
 
+  const onClickPostWriteBtn = useCallback(() => {
+    router.push(`/writePosts`);
+  }, []);
+
   return (
     <AppLayout>
+      <ButtonWrapper>
+        <Segmented
+          options={[
+            {
+              label: "최신순",
+              value: "Latest",
+              icon: <BarsOutlined />,
+            },
+            {
+              label: "추천순",
+              value: "Stars",
+              icon: <StarOutlined />,
+            },
+          ]}
+        />
+
+        <WriteBtn type="primary" onClick={onClickPostWriteBtn}>
+          <EditOutlined />
+          글쓰기
+        </WriteBtn>
+
+        {/* {logInUserInfo ? (
+          SPACE SPACE SPACE SPACE SPACE SPACE
+        ) : (
+          <></>
+        )} */}
+      </ButtonWrapper>
+
       <ListWrapper
         itemLayout="vertical"
         size="large"
