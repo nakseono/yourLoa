@@ -24,6 +24,10 @@ const LoginFormWrapper = styled.div`
   }
 `;
 
+const SignUpBtn = styled.div`
+  margin-top: 10px;
+`;
+
 const Login = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -122,10 +126,12 @@ const Login = () => {
             >
               로그인
             </Button>
-            Or{" "}
-            <Link href="signUp">
-              <a>회원가입</a>
-            </Link>
+            <SignUpBtn>
+              Or{" "}
+              <Link href="signUp">
+                <a>회원가입</a>
+              </Link>
+            </SignUpBtn>
           </Form.Item>
         </LoginForm>
       </LoginFormWrapper>
