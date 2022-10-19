@@ -19,7 +19,7 @@ const LogoSpace = styled.div`
   margin: auto;
   height: 170px;
   width: 425px;
-  background-color: #ffc8c8;
+  background-color: rgb(205, 231, 243);
 `;
 
 const Home = () => {

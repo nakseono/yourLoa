@@ -58,11 +58,11 @@ const AppLayout = ({children}) => {
         },
         {
             label: (
-                <Link href="/board">
-                    <a>자유게시판</a>
+                <Link href="/community">
+                    <a>커뮤니티</a>
                 </Link>
             ),
-            key: "board",
+            key: "community",
         },
     ];
 
