@@ -85,7 +85,7 @@ const Auction = () => {
         <Tooltip title="경쟁 금액은 경매에 참여하는 모두가 경쟁 상대로써, 얼마까지 입찰해야 손해를 보지 않는지 계산합니다.">
           <Radio.Button value="competition">경쟁</Radio.Button>
         </Tooltip>
-        <Tooltip title="분배 금액은 N명이 모두 합의하에 N빵 하는 것을 간주하고 계산합니다.">
+        <Tooltip title="분배 금액은 N명이 모두 합의하에 /N 하는 것을 간주하고 계산합니다.">
           <Radio.Button value="party">분배</Radio.Button>
         </Tooltip>
       </PartyNumber>
