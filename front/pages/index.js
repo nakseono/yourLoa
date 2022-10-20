@@ -1,10 +1,12 @@
 import React, { useState, useCallback } from "react";
-import AppLayout from "../components/AppLayout";
 import { Input, Col, Row } from "antd";
 import styled from "styled-components";
-import Notice from "../components/Notice";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+
+import AppLayout from "../components/AppLayout";
+import Notice from "../components/Notice";
+import HotPost from "../components/HotPost";
 
 const UserSearchInput = styled(Input.Search)`
   display: flex;
@@ -20,6 +22,11 @@ const LogoSpace = styled.div`
   height: 170px;
   width: 425px;
   background-color: rgb(205, 231, 243);
+`;
+
+const NoticeWrapper = styled(Row)`
+  display: flex;
+  justify-content: center;
 `;
 
 const Home = () => {
@@ -55,14 +62,14 @@ const Home = () => {
         enterButton
       />
 
-      <Row>
-        <Col span={12}>
+      <NoticeWrapper>
+        <Col sm={24} lg={12} xl={7}>
           <Notice />
         </Col>
-        <Col span={12}>
-          <Notice />
+        <Col sm={24} lg={12} xl={7}>
+          <HotPost />
         </Col>
-      </Row>
+      </NoticeWrapper>
     </AppLayout>
   );
 };

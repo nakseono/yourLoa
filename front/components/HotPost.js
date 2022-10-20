@@ -1,36 +1,36 @@
 import React from "react";
 import { List, Divider, Avatar } from "antd";
 
-const noticeData = [
+const hotPostData = [
   {
-    title: "공지사항 1",
+    title: "커뮤니티 인기 게시글 1",
   },
   {
-    title: "공지사항 2",
+    title: "커뮤니티 인기 게시글 2",
   },
   {
-    title: "공지사항 3",
+    title: "커뮤니티 인기 게시글 3",
   },
   {
-    title: "공지사항 4",
+    title: "커뮤니티 인기 게시글 4",
   },
 ];
 
-const Notice = () => {
+const HotPost = () => {
   return (
     <List
-      header={<div>공지사항</div>}
+      header={<div>커뮤니티 인기 게시글</div>}
       style={{ margin: "7px" }}
       bordered
       size="small"
       itemLayout="horizontal"
-      dataSource={noticeData}
+      dataSource={hotPostData}
       renderItem={(item) => (
         <List.Item>
           <List.Item.Meta
             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
             title={<a href="https://ant.design">{item.title}</a>}
-            description="noticePost content"
+            description="hotpost content"
           />
         </List.Item>
       )}
@@ -38,4 +38,4 @@ const Notice = () => {
   );
 };
 
-export default Notice;
+export default HotPost;
