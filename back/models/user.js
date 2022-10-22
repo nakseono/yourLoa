@@ -3,7 +3,11 @@ module.exports = (sequelize, DataTypes) => {
     "User", // users -> model 이름이 자동으로 소문자, 복수가 되어 MySQL 에는 users 라는 테이블이 생성된다.
     {
       // id가 기본적으로 들어간다. (MySQL에서 생성)
-      username: {
+      userId: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+      },
+      nickname: {
         type: DataTypes.STRING(30),
         allowNull: false,
       },
