@@ -5,6 +5,7 @@ const passport = require("passport");
 
 const router = express.Router();
 
+// 로그인중인 상태인지 확인하는 라우터
 router.get("/", async (req, res, next) => {
   // Get /user
   // console.log(req.headers);
@@ -20,7 +21,7 @@ router.get("/", async (req, res, next) => {
           {
             model: Post,
             attributes: ["id"], // 서버로부터 프론트엔드에 필요한 데이터만 보내주는 것.
-            // 게시글 수, 팔로잉, 팔로워 숫자만 파악하려면 굳이 하나하나 데이터를 다 가져올 필요 없이 id만 가져온다.
+            // 게시글 id만 가져온다.
           },
         ],
       });
@@ -34,12 +35,13 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", isNotLoggedIn, async (req, res, next) => {
+// 회원가입 요청 처리하는 라우터
+router.post("/", async (req, res, next) => {
   // POST /user || next를 넣으면 발생한 에러를 한방에 브라우저로 모아준다.
   try {
     const exUser = await User.findOne({
       where: {
-        email: req.body.email,
+        userId: req.body.userId,
       },
     });
 
@@ -52,7 +54,7 @@ router.post("/", isNotLoggedIn, async (req, res, next) => {
 
     await User.create({
       //! User 테이블 내에 post, 즉 생성을 요청한다. 또한 async await을 사용함으로써 비동기처리를 해주고 순서대로 처리될 수 있도록 해준다.
-      email: req.body.email,
+      userId: req.body.userId,
       nickname: req.body.nickname,
       password: hashedPassword,
     });
@@ -64,8 +66,9 @@ router.post("/", isNotLoggedIn, async (req, res, next) => {
   }
 });
 
+// 로그인 요청하는 라우터
 // POST /user/login
-router.post("/login", isNotLoggedIn, (req, res, next) => {
+router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {
       console.error(err);
@@ -89,14 +92,6 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
           {
             model: Post,
           },
-          {
-            model: User,
-            as: "Followings",
-          },
-          {
-            model: User,
-            as: "Followers",
-          },
         ],
       });
       return res.status(200).json(fullUserWithoutPassword);
@@ -104,7 +99,8 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
   })(req, res, next);
 });
 
-router.post("/logout", isLoggedIn, (req, res) => {
+// 로그아웃 요청
+router.post("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
   res.send("ok");
