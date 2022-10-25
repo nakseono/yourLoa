@@ -3,8 +3,11 @@ const cors = require("cors");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
+const passport = require("passport");
+const passportConfig = require("./passport");
 
 const db = require("./models");
+const userRouter = require("./routes/user");
 
 dotenv.config();
 const app = express();
@@ -17,6 +20,7 @@ db.sequelize
   .catch((err) => {
     console.log(err);
   });
+passportConfig();
 
 app.use(
   cors({
@@ -35,6 +39,11 @@ app.use(
     secret: process.env.COOKIE_SECRET,
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use("/user", userRouter);
 
 app.listen(3065, () => {
   console.log("서버 실행 중");
