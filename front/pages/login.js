@@ -54,7 +54,6 @@ const Login = () => {
       type: LOG_IN_REQUEST,
       data: { userId: id, userPw: password },
     });
-    router.push("/");
   }, [id, password]);
 
   const { logInError, logInUserInfo } = useSelector((state) => state.user);
@@ -64,6 +63,12 @@ const Login = () => {
       alert(logInError);
     }
   }, [logInError]);
+
+  useEffect(() => {
+    if (logInUserInfo) {
+      router.push("/");
+    }
+  }, [logInUserInfo]);
 
   return (
     <AppLayout>
