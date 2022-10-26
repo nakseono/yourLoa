@@ -39,6 +39,8 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   // POST /user || next를 넣으면 발생한 에러를 한방에 브라우저로 모아준다.
   try {
+    console.log(`req.body : ${JSON.stringify(req.body)}`);
+
     const exUser = await User.findOne({
       where: {
         userId: req.body.userId,

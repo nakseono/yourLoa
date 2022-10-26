@@ -7,6 +7,9 @@ export const initialState = {
   logOutLoading: false,
   logOutDone: false,
   logOutError: null,
+  signUpLoading: false,
+  signUpDone: false,
+  signUpError: null,
   logInUserInfo: null,
 };
 
@@ -16,6 +19,10 @@ export const LOG_IN_FAILURE = "LOG_IN_FAILURE";
 export const LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
 export const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
 export const LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
+export const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
+export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
+export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
+export const SIGN_UP_SUCCESS_AFTER = "SIGN_UP_SUCCESS_AFTER";
 
 const reducer = (state = initialState, action) => {
   return produce(state, (draft) => {
@@ -48,6 +55,20 @@ const reducer = (state = initialState, action) => {
       case LOG_OUT_FAILURE:
         draft.logOutLoading = false;
         draft.logOutError = action.error;
+        break;
+
+      case SIGN_UP_REQUEST:
+        draft.signUpLoading = true;
+        draft.signUpError = null;
+        draft.signUpDone = false;
+        break;
+      case SIGN_UP_SUCCESS:
+        draft.signUpLoading = false;
+        draft.signUpDone = true;
+        break;
+      case SIGN_UP_FAILURE:
+        draft.signUpLoading = false;
+        draft.signUpError = action.error;
         break;
 
       default:
